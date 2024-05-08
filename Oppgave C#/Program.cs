@@ -43,9 +43,9 @@ namespace Oppgave_C_
             items.Add("Underwear");
             items.Add("T-shirts");
             items.Add("Pants");
-            for (int i = 0; i < items.Length; i++) {
-                Console.WriteLine("Remember:" + items);
-                    }
+            /*for (int i = 0; i < items.Length; i++) {
+                Console.WriteLine("Remember:" + items);*/
+        }
         }
     }
 }
