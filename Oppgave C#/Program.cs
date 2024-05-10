@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 
 namespace Oppgave_C_
 {
@@ -8,9 +9,9 @@ namespace Oppgave_C_
         {
             PrintUser();
             PrintKommuner();
-            PrintPackingList();
+            PackingList.PrintList();
 
-         }
+        }
             // Variablels
         public static void PrintUser() { 
             
@@ -22,30 +23,47 @@ namespace Oppgave_C_
             Console.WriteLine("Hight:" + userHight);
             Console.WriteLine("Name:" + userName);
         }
-            //Array
-        public static void PrintKommuner() {
-            
-            string[] kommuner = { 
+        //Array
+        public static void PrintKommuner() 
+        {
+
+            string[] kommuner =
+            {
                 "Bergen",
                 "Oslo",
                 "Halden",
-                "Troms" };
+                "Troms"
+            };
             for (int i = 0; i < kommuner.Length; i++)
             {
                 Console.WriteLine("Kommune:" + kommuner[i]);
             }
-                }
-        public static void PrintPackingList()
-        {
-            List<string> items = new List<string>();
-            //List Items
-            items.Add("Socks");
-            items.Add("Underwear");
-            items.Add("T-shirts");
-            items.Add("Pants");
-            /*for (int i = 0; i < items.Length; i++) {
-                Console.WriteLine("Remember:" + items);*/
         }
+        public class PackingList
+        {
+            private readonly List<string> items = new();
+            //List Items
+            public void AddItems(string item) 
+            {
+              items.Add(item); 
+            }
+            public void PrintPackingList()
+            {
+              foreach (string item in items)
+              {
+                Console.WriteLine("Remember:" + item);
+              }
+            }
+            public static void PrintList()
+            {
+                PackingList myPackingList = new PackingList();
+                myPackingList.AddItems("Socks");
+                myPackingList.AddItems("Underwear");
+                myPackingList.AddItems("T-shirts");
+                myPackingList.AddItems("Pants");
+                myPackingList.PrintPackingList();
+
+            }
         }
     }
 }
