@@ -24,6 +24,12 @@ namespace Oppgave_C_
             mathematics();
 
             split();
+
+            Cow myCow = new Cow();
+            myCow.animalSound();
+
+            wolf wolf = new();
+            wold.Speak();
         }
             // Variablels
         public static void PrintUser() { 
@@ -109,14 +115,19 @@ namespace Oppgave_C_
             {
                 void animalSound();
             }
-            class Cow : IAnimal
+        class Cow : IAnimal
         {
             public void animalSound()
             {
                 Console.WriteLine("The Cow says: Moo!");
             }
         }
-    }
-
-
+        class Wolf : IAnimal
+        {
+            public void animalSound()
+            {
+                 Console.WriteLine("The Wolf: Howl!");
+            }
+        }
+     }
 }
