@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 
 namespace Oppgave_C_
 {
@@ -8,7 +10,9 @@ namespace Oppgave_C_
         static void Main()
         {
             PrintUser();
+
             PrintKommuner();
+
             PackingList.PrintList();
 
             // Get and Set
@@ -18,6 +22,8 @@ namespace Oppgave_C_
 
             //mathematics
             mathematics();
+
+            split();
         }
             // Variablels
         public static void PrintUser() { 
@@ -87,6 +93,28 @@ namespace Oppgave_C_
             int ingeAge = 27;
             int SteinAge = 40;
             Console.WriteLine("Comined age of Inge and Stein = " + (ingeAge + SteinAge));
+        }
+
+        public static void split()
+        {
+            string paragraf = "You win some times. you luse some times.";
+            string[] subs = paragraf.Split(' ', '.');
+            foreach (var sub in subs)
+            {
+                Console.WriteLine($"substring: {sub}");
+            }
+
+        }
+            interface IAnimal
+            {
+                void animalSound();
+            }
+            class Cow : IAnimal
+        {
+            public void animalSound()
+            {
+                Console.WriteLine("The Cow says: Moo!");
+            }
         }
     }
 
