@@ -1,4 +1,4 @@
-*My sorses:*
+*My sources:*
 
 *-www.w3schools.com*<br>
 *-www.programiz.com*<br>
