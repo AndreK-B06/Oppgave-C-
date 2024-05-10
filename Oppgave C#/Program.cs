@@ -10,11 +10,14 @@ namespace Oppgave_C_
             PrintUser();
             PrintKommuner();
             PackingList.PrintList();
+
             // Get and Set
             Person myObj = new Person();
             myObj.Name ="Get name: " + "Adrian";
             Console.WriteLine(myObj.Name);
 
+            //mathematics
+            mathematics();
         }
             // Variablels
         public static void PrintUser() { 
@@ -78,6 +81,12 @@ namespace Oppgave_C_
                 get { return name; }
                 set { name = value; }
             }
+        }
+        public static void mathematics()
+        {
+            int ingeAge = 27;
+            int SteinAge = 40;
+            Console.WriteLine("Comined age of Inge and Stein = " + (ingeAge + SteinAge));
         }
     }
 
