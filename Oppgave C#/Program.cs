@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 namespace Oppgave_C_
 {
@@ -10,6 +10,10 @@ namespace Oppgave_C_
             PrintUser();
             PrintKommuner();
             PackingList.PrintList();
+            // Get and Set
+            Person myObj = new Person();
+            myObj.Name ="Get name: " + "Adrian";
+            Console.WriteLine(myObj.Name);
 
         }
             // Variablels
@@ -39,10 +43,10 @@ namespace Oppgave_C_
                 Console.WriteLine("Kommune:" + kommuner[i]);
             }
         }
+        //List Class
         public class PackingList
         {
             private readonly List<string> items = new();
-            //List Items
             public void AddItems(string item) 
             {
               items.Add(item); 
@@ -54,6 +58,7 @@ namespace Oppgave_C_
                 Console.WriteLine("Remember:" + item);
               }
             }
+            //List Items
             public static void PrintList()
             {
                 PackingList myPackingList = new PackingList();
@@ -65,5 +70,16 @@ namespace Oppgave_C_
 
             }
         }
+        public class Person
+        {
+            private string name;
+            public string Name
+            {
+                get { return name; }
+                set { name = value; }
+            }
+        }
     }
+
+
 }
