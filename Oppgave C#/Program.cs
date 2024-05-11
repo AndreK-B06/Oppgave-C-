@@ -25,11 +25,14 @@ namespace Oppgave_C_
 
             split();
 
-            Cow myCow = new Cow();
-            myCow.animalSound();
+            Cow cow = new();
+            cow.Speak();
 
-            wolf wolf = new();
-            wold.Speak();
+            Wolf wolf = new();
+            wolf.Speak();
+
+            //People on Earth Growth Rate
+            PeopleOnEarth();
         }
             // Variablels
         public static void PrintUser() { 
@@ -113,21 +116,44 @@ namespace Oppgave_C_
         }
             interface IAnimal
             {
-                void animalSound();
+                void Speak();
             }
         class Cow : IAnimal
         {
-            public void animalSound()
+            public void Speak()
             {
                 Console.WriteLine("The Cow says: Moo!");
             }
         }
         class Wolf : IAnimal
         {
-            public void animalSound()
+            public void Speak()
             {
                  Console.WriteLine("The Wolf: Howl!");
             }
         }
-     }
+        static void PeopleOnEarth()
+        {
+            // Start and end years
+            int startYear = 1950;
+            int endYear = 2024;
+
+            // Start and end populations
+            double startPopulation = 2.5e9;
+            double GrowthRate = 0.016;
+
+            //Calculate growth rate dynamically
+            double growthRate = MatchCasing.Pow(endPeopulation / startPopulation, 1.0 / (endYear - startYear)); - 1
+
+            Console.WriteLine("Year\tPopulation (in billions)");
+            Console.WriteLine("==========================");
+
+            // Calculate and print population for each year
+            for (int year = startYear; year <= endYear; year++)
+            {
+                double population = startPopulation * Math.Pow(1 + GrowthRate, startYear);
+                Console.WriteLine($"{year}\t{population / 1e9:0.##} billion");
+            }
+        }
+    }
 }
