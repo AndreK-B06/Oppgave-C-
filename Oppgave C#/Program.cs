@@ -140,10 +140,10 @@ namespace Oppgave_C_
 
             // Start and end populations
             double startPopulation = 2.5e9;
-            double GrowthRate = 0.016;
+            double endPopulation = 7.9e9;
 
             //Calculate growth rate dynamically
-            double growthRate = MatchCasing.Pow(endPeopulation / startPopulation, 1.0 / (endYear - startYear)); - 1
+            double growthRate = Math.Pow(endPopulation / startPopulation, 1.0 / (endYear - startYear)) - 1;
 
             Console.WriteLine("Year\tPopulation (in billions)");
             Console.WriteLine("==========================");
@@ -151,7 +151,7 @@ namespace Oppgave_C_
             // Calculate and print population for each year
             for (int year = startYear; year <= endYear; year++)
             {
-                double population = startPopulation * Math.Pow(1 + GrowthRate, startYear);
+                double population = startPopulation * Math.Pow(1 + growthRate, year - startYear);
                 Console.WriteLine($"{year}\t{population / 1e9:0.##} billion");
             }
         }
