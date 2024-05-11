@@ -9,46 +9,51 @@ namespace Oppgave_C_
     {
         static void Main()
         {
+        // Ptiny user Infotmsyion
             PrintUser();
 
+        // Print list of Kommuner
             PrintKommuner();
 
+        // Print packing list
             PackingList.PrintList();
 
-            // Get and Set
+        // Print get and set properties
             Person myObj = new Person();
             myObj.Name ="Get name: " + "Adrian";
             Console.WriteLine(myObj.Name);
 
-            //mathematics
+        // Print mathematic
             mathematics();
 
+        // Print demonstration of Split
             split();
 
+        // Print interact
             Cow cow = new();
             cow.Speak();
 
             Wolf wolf = new();
             wolf.Speak();
 
-            //People on Earth Growth Rate
+        // People on Earth Growth Rate
             PeopleOnEarth();
         }
-            // Variablels
+
+        // Variablels, user information
         public static void PrintUser() { 
             
             int userAge = 50;
             double userHight = 150.1;
             string userName = "Leah";
-            //Caling Variabels
+
             Console.WriteLine("Age:" + userAge);
             Console.WriteLine("Hight:" + userHight);
             Console.WriteLine("Name:" + userName);
         }
-        //Array
+        // Array of Kommuner
         public static void PrintKommuner() 
         {
-
             string[] kommuner =
             {
                 "Bergen",
@@ -61,7 +66,7 @@ namespace Oppgave_C_
                 Console.WriteLine("Kommune:" + kommuner[i]);
             }
         }
-        //List Class
+        // Define a class for managing packing lists
         public class PackingList
         {
             private readonly List<string> items = new();
@@ -88,6 +93,7 @@ namespace Oppgave_C_
 
             }
         }
+        // Get and set properties
         public class Person
         {
             private string name;
@@ -97,13 +103,14 @@ namespace Oppgave_C_
                 set { name = value; }
             }
         }
+        // Perform a mathematical operation
         public static void mathematics()
         {
             int ingeAge = 27;
             int SteinAge = 40;
             Console.WriteLine("Comined age of Inge and Stein = " + (ingeAge + SteinAge));
         }
-
+        // Demonstrate Split()
         public static void split()
         {
             string paragraf = "You win some times. you luse some times.";
@@ -114,10 +121,11 @@ namespace Oppgave_C_
             }
 
         }
-            interface IAnimal
-            {
-                void Speak();
-            }
+        // Interface for animals to speak
+        interface IAnimal
+        {
+            void Speak();
+        }
         class Cow : IAnimal
         {
             public void Speak()
@@ -132,6 +140,7 @@ namespace Oppgave_C_
                  Console.WriteLine("The Wolf: Howl!");
             }
         }
+        // Calculate and print population growth on Earth
         static void PeopleOnEarth()
         {
             // Start and end years
